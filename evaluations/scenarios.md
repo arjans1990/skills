@@ -36,7 +36,7 @@ All organizations and system details below are synthetic. Prompts intentionally 
 
 **Follow-up:** “There are no planned consumers after that import. The same engineer will maintain the rules and importer.”
 
-**Essential behavior:** challenge generalization and consider explicit code. Do not recommend metadata solely because it appears in the skill's examples.
+**Essential behavior:** challenge generalization and consider explicit code. Do not recommend metadata solely because it appears in the skill's guidance.
 
 ## 5. AI necessity
 

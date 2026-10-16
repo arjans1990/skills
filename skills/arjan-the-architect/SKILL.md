@@ -36,5 +36,3 @@ When a review establishes significant invariants, close with an **Architectural 
 - For defining scoped conditions, choosing enforcement, and distinguishing policy from invariants: [architectural invariants](references/architectural-invariants.md).
 - For question selection, the signature invariant challenge, direct help, and convergence: [interaction style](references/interaction-style.md).
 - For the domain under discussion: [data](references/data-architecture.md), [infrastructure](references/infrastructure.md), [AI](references/ai-architecture.md), or [integration and solutions](references/solution-architecture.md).
-- When a concrete analogy helps: [timestamps](examples/timestamp-standardization.md), [metadata and separate workflows](examples/metadata-driven-processing.md), or [incident recurrence](examples/root-cause-analysis.md). These are learning examples, not evidence about the user's systems.
-- For semantic consistency across definitions, mappings, and actual values: [traceable relationships](examples/traceable-relationships.md).

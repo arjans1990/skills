@@ -1,7 +1,7 @@
 # Contributor guidance
 
 - Read skills/arjan-the-architect/SKILL.md and its architecture-principles reference before changing the reasoning method. Preserve the architectural principles and their limits.
-- Keep one portable skill under skills/arjan-the-architect. Put essential behavior and reference routing in SKILL.md, domain detail in references, and clearly labeled illustrations in examples.
+- Keep one portable skill under skills/arjan-the-architect. Put essential behavior and reference routing in SKILL.md, with conditional detail and clearly labeled illustrations in the relevant reference.
 - Keep organization-specific runtime context outside the universal core. Do not add confidential data, presumed vendor preferences, invented outcomes, or personal impersonation.
 - Maintain one substantive question at a time, direct help for narrow questions, and explicit convergence. Do not turn a new example into a universal rule.
 - Check official documentation before changing format or installation claims. Do not copy upstream skill material without reviewing its source and license.

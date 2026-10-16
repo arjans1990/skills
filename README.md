@@ -28,7 +28,7 @@ For other agents, omit `--agent github-copilot` and select your installed client
 
 ### VS Code / GitHub Copilot
 
-The CLI currently targets `.agents/skills/` for a project and `~/.copilot/skills/` for personal Copilot skills. Alternatively, copy the complete skill directory to `.github/skills/arjan-the-architect/` in the target project; preserve its references and examples. Avoid installing duplicate copies through multiple paths.
+The CLI currently targets `.agents/skills/` for a project and `~/.copilot/skills/` for personal Copilot skills. Alternatively, copy the complete skill directory to `.github/skills/arjan-the-architect/` in the target project; preserve its references. Avoid installing duplicate copies through multiple paths.
 
 Open Copilot Chat and invoke `/arjan-the-architect`, or ask for an architecture review. Use `/skills` to inspect available skills if discovery fails. Relevant requests can also activate it automatically; discovery does not guarantee activation for every prompt. No explicit-only policy is set.
 
@@ -68,12 +68,14 @@ Run format validation using the Agent Skills reference implementation (requires 
 uvx --from skills-ref agentskills validate skills/arjan-the-architect
 ```
 
-The specification currently shows the executable as `skills-ref`; the package resolved during validation exposes `agentskills` instead. Run the prompts and score conversations with [the evaluation guide](evaluations/README.md) and [scenarios](evaluations/scenarios.md). Format validation does not establish behavioral quality. See [the validation record](docs/validation.md) for executed checks and remaining limits.
+The specification currently shows the executable as `skills-ref`; the package resolved during validation exposes `agentskills` instead. Run the prompts and score conversations with [the evaluation guide](evaluations/README.md) and [scenarios](evaluations/scenarios.md). Format validation does not establish behavioral quality. The evaluation guide summarizes recorded results and known limitations.
 
 ## Sources and open decisions
 
 The format, commands, discovery paths, and invocation guidance were checked on 2026-10-16 against the [Agent Skills specification](https://agentskills.io/specification), [skills CLI documentation](https://github.com/vercel-labs/skills), and [VS Code documentation](https://code.visualstudio.com/docs/agent-customization/agent-skills). CLI versions and client behavior can change. The CLI discovers `skills/<name>/SKILL.md`; VS Code requires installation into a supported discovery path.
 
-MVP defaults are constructive challenge, automatic discovery, bounded inspection, and optional decision records. [Open context and decisions](docs/open-decisions.md) distinguishes those defaults from unresolved evidence. Contributions should follow [AGENTS.md](AGENTS.md).
+MVP defaults are constructive challenge, automatic discovery, bounded inspection, and optional decision records. Automatic discovery is a reversible product choice; a separate custom agent persona remains optional future work, not a dependency. Contributions should follow [AGENTS.md](AGENTS.md).
+
+Historical transcripts and measured case outcomes are unavailable; examples are generalized or synthetic, and principles are not independently verified personal quotations. Additional real case details require supporting evidence and authorization to publish. No external skill content has been copied; source and license review is required before any future reuse. Client compatibility and evaluation thresholds still need validation as described in the evaluation guide.
 
 Licensed under the existing [MIT license](LICENSE). No upstream grilling skill text or files have been copied.

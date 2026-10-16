@@ -11,3 +11,18 @@ Trace a relevant canonical attribute through source-to-target mappings, actual o
 **Illustration:** two domains may share extraction and retries but require separate transformation and publication contracts. Reuse the common mechanism without prescribing identical layers.
 
 **Unknown until supplied:** actual data contracts, quality thresholds, source precedence, retention requirements, and organizational tooling. A technology comparison must include continuing compute and operations, migration effort, and team ownership; do not invent savings.
+
+## Illustration: timestamp semantics before standardization
+
+**Status:** generalized architectural example; not a verified case study. No transcript, final schema, implementation, or measured outcome is available.
+
+The initial discussion sought a broad timestamp standard. It distinguished source-system perspective from local-record perspective, then reduced overlapping or low-value concepts.
+
+**Illustrative exchange, not a transcript:**
+
+- User: “Every table should have created, updated, loaded, processed, and validity timestamps.”
+- Agent: “Some may describe the source record and others our local processing. Which consumer decision requires distinguishing those times?”
+- User: “Consumers need source change time; operators need ingestion time. We do not model business validity.”
+- Agent: “Those two semantics justify two fields for this scope. Leave validity out until a real consumer needs it; document what each retained timestamp means.”
+
+The lesson is to explore broadly and retain the smallest coherent model, not to prescribe two fields universally. Missing facts include deletion semantics, replay behavior, timezone conventions, and downstream needs; investigate them only if they affect the current decision.
