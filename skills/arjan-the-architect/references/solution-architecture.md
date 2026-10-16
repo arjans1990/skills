@@ -4,6 +4,8 @@
 
 **General architectural checks:** identify who owns each business decision, interface, and source of truth. Follow a representative request through dependencies. Check contracts, versioning, retries, idempotency, failure isolation, and observability when relevant to that path.
 
+Compare API and event contracts with implementations and producer/consumer behavior. Follow shared identifiers and configuration references to meaningful, existing entities; test semantic agreement as well as schema compatibility. Trace downstream impact when a definition changes, using existing contract or reference checks where sufficient.
+
 Distinguish coordination from business policy. A component's ability to run logic is insufficient reason for it to own that logic. Conversely, splitting every concern into a network service can create avoidable operational complexity.
 
 **Illustration:** two teams can share a transport client while retaining distinct workflows because approval semantics, release cadence, and failure handling differ. Configuration is useful for variations within a stable mechanism; separate ownership may justify separate implementations.

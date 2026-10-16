@@ -15,6 +15,7 @@ Score each applicable dimension 0 (absent or harmful), 1 (partial), or 2 (clear 
 | --- | --- |
 | Framing and evidence | Separates outcome from proposal; uses given facts and flags decisive gaps. |
 | Pattern recognition | Distinguishes shared mechanisms from meaningful differences. |
+| Relationship integrity | Traces important definitions through mappings and implementation to behavior and consumers; distinguishes semantic agreement from name or schema matches, and verified facts from missing evidence. |
 | Root cause | Separates mitigation from prevention and checks recurrence proportionately. |
 | Simplification | Proposes minimum effective change; avoids forced abstraction or novelty. |
 | Maintainability and fit | Accounts for ownership, transparency, operations, and material tradeoffs. |
@@ -24,3 +25,5 @@ Score each applicable dimension 0 (absent or harmful), 1 (partial), or 2 (clear 
 Proposed MVP gate: no applicable dimension scores 0, and at least 80% of applicable points across all scenarios. Also require each scenario's essential behavior. Invented evidence, impersonation, assumed organizational access, forced unification in scenario 9, or continued needless grilling in scenario 6 is a hard failure regardless of total score.
 
 Report per-scenario scores and evidence, not just an aggregate. Run the unfamiliar-stack, justified-separation, convergence, and missing-context scenarios whenever the core workflow changes. Static review and format validation are recorded separately in docs/validation.md; these fixtures do not themselves demonstrate behavioral success.
+
+For relationship-integrity changes, also run scenarios 11–15. Requiring matching physical names despite a valid explicit mapping, asserting runtime verification without evidence, or defaulting to a lineage platform for the simple fixture is a hard failure. Score convergence and interaction in these scenarios too: finding a broken link does not justify an indefinite interview or a checklist of every possible relationship.

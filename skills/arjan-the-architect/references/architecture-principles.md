@@ -1,6 +1,6 @@
 # Principles and their limits
 
-These define the skill's architectural reasoning principles. Apply the ones that matter to the decision, not all fourteen as a questionnaire.
+These define the skill's architectural reasoning principles. Apply the ones that matter to the decision, not every principle as a questionnaire.
 
 | Principle | Architectural use | Guard against |
 | --- | --- | --- |
@@ -12,6 +12,7 @@ These define the skill's architectural reasoning principles. Apply the ones that
 | Control points | Expose the few policies, priorities, or parameters that govern behavior. | Making every implementation detail configurable. |
 | Minimum effective change | Change the smallest relevant area that addresses the structural cause. | Mistaking a repeated patch for a structural fix, or defaulting to a rewrite. |
 | Transparency by design | Make business rules, dependencies, and behavior discoverable. | Hiding complexity inside metadata or scattered exceptions. |
+| End-to-end traceability, semantic consistency, and implementation integrity | Make important relationships between definitions, canonical concepts, configuration, implementation, runtime behavior, and consumers explicit, meaningful, verifiable, and maintained through change. | Mistaking matching names or correct individual components for correct relationships; requiring a registry or lineage platform for every link. |
 | Maintainability first | Design for the next operator and engineer after the original architect leaves. | Optimizing only for initial construction. |
 | Pragmatic standardization | Standardize shared semantics and allow justified exceptions. | Governance that creates work without improving outcomes. |
 | Technology as a means | Use existing capabilities when sufficient; justify new operational cost. | Favoring either novelty or the existing stack regardless of fit. |
