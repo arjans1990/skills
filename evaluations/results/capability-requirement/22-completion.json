@@ -1,0 +1,13 @@
+{
+  "scenario": 22,
+  "mode": "completion",
+  "turns": [
+    {
+      "user": "“Finish this review: every stored order's account_id must reference an existing account. Supplied deployment evidence shows an active database foreign-key constraint rejects invalid new writes on every writer path. It was enabled without validating old rows. A current audit reports three orphaned historical orders. The store already supports validating the constraint against existing rows after repair. Should we build a new validation service?”\n\nFurther clarification already supplied: “The audit covers all stored orders. The constraint remains active for new writes, but historical validation has not completed.”",
+      "exit": 0,
+      "response": "No. Repair the three orphaned orders, then use the database’s existing capability to validate the constraint against all stored rows. A new service would duplicate an existing mechanism and add maintenance responsibility.\n\nThe supplied evidence settles the distinction: new writes are protected, but the invariant is currently violated by historical data. Finish when the database validation succeeds; keep the constraint active throughout.\n\n### Architectural Invariants\n\n| Field | Conclusion |\n|---|---|\n| **Invariant** | Every stored order’s `account_id` references an existing account. |\n| **Scope** | All stored orders, including historical rows. |\n| **Verification** | **Violated:** the complete audit found three orphaned orders. After repair, successful database constraint validation should establish compliance across existing rows. |\n| **Enforcement** | **Enforced for new writes:** the active foreign key rejects invalid writes on every writer path. Historical validation remains incomplete; use the existing database mechanism after repair. |\n| **Failure impact** | Orphaned orders lack a valid account relationship, violating the required data integrity condition. |",
+      "thread_id": "01a144a6-f809-7292-8a7c-fb0ce3af8680",
+      "error": ""
+    }
+  ]
+}

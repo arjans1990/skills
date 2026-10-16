@@ -16,7 +16,7 @@ Traceability establishes where relationships lead. Semantic integrity establishe
 
 A business rule can constrain correctness in an explicit context, but not every business rule is architectural or permanent. For example, a current discount percentage is policy; applying the approved policy version consistently may be an invariant. Ask what justifies a proposed condition before enforcing it.
 
-“Can” does not establish “must”: if a user says purchases can be reversed, do not report reversibility as a required invariant unless a requirement or correctness argument establishes it. Likewise, versioning alone does not establish an agreed mapping-activation invariant. Keep useful but unjustified candidates out of the established-condition list or label them as proposals.
+“Can” does not establish “must”: if a user says purchases can be reversed, that is a capability, not a requirement to preserve reversibility. Versioning likewise does not establish an agreed mapping-activation invariant. Before reporting an established invariant, trace its necessity to an actual requirement or explain why violating it would contradict a justified correctness condition. A possible loss of a feature is not itself that justification. If necessity is unknown, omit the candidate or label it as a proposed constraint requiring confirmation; marking it “Unverified” does not cure an unjustified requirement.
 
 ## Choose the boundary and response
 

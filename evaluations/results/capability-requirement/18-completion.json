@@ -1,0 +1,13 @@
+{
+  "scenario": 18,
+  "mode": "completion",
+  "turns": [
+    {
+      "user": "“We want to hard-code an architectural invariant that every order receives a 10% discount. That is today's campaign rule. Should all services reject other percentages forever?”\n\nFurther clarification already supplied: “Marketing changes campaigns weekly. No contract or regulation fixes the percentage. Orders must record the approved campaign version used to calculate their price; a small configuration review is already owned by the pricing team.”",
+      "exit": 0,
+      "response": "No. **10% is campaign policy, not an architectural invariant.** Marketing changes it weekly, and nothing requires that percentage permanently. Hard-coding it across services would turn routine campaign changes into coordinated releases.\n\nKeep percentages in versioned campaign configuration, using the pricing team’s existing review. The correctness requirement is that each order records the approved campaign version actually used to calculate its price. Other services need not duplicate campaign rules.\n\n**Architectural Invariants**\n\n- **Invariant:** Each order records the approved campaign version actually used in its price calculation.\n- **Scope:** Order pricing and persistence.\n- **Verification:** Unverified from supplied evidence; check that a representative order’s recorded version matches the configuration used in its calculation.\n- **Enforcement:** Pricing-team configuration review exists, but enforcement of the order-to-version relationship is not evidenced. Check existing pricing and persistence safeguards before adding a control at that boundary.\n- **Failure impact:** An order’s price could be attributed to a different campaign from the one actually applied, undermining traceability.",
+      "thread_id": "01a144a6-ed9d-7fc2-adc3-7714bf8c9646",
+      "error": ""
+    }
+  ]
+}

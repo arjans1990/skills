@@ -1,0 +1,20 @@
+{
+  "scenario": 26,
+  "mode": "conversation",
+  "turns": [
+    {
+      "user": "“Our reporting tool can refresh dashboards every minute. We propose making one-minute refresh an architectural invariant for all reports because the platform supports it. Review this proposal.”",
+      "exit": 0,
+      "response": "I would reject the proposal as stated. One-minute refresh is a platform capability; the supplied evidence does not establish a business requirement for every report.\n\nIt also confuses refresh frequency with data freshness: refreshing every minute does not guarantee current data if upstream processing is delayed.\n\nKeep refresh intervals configurable by reporting need. Compared with a universal rule, this allows less frequent refresh where sufficient, while requiring explicit freshness expectations for reports that support time-sensitive decisions. There is no supplied evidence about workload or cost, so any efficiency benefit remains unquantified.\n\nWhat business decision would become incorrect or materially less useful if its report were refreshed less frequently than once a minute?",
+      "thread_id": "01a144a6-95fe-73a1-9784-55edfaa70b1c",
+      "error": ""
+    },
+    {
+      "user": "“The only agreed requirement is a complete daily report by 08:00. No user has asked for live dashboards. The existing daily job meets that deadline with supplied successful-run evidence. We have no measured benefit for minute-by-minute refresh.”",
+      "exit": 0,
+      "response": "Keep the existing daily job. It meets the agreed requirement, supported by the supplied successful-run evidence. Minute-by-minute refresh has no demonstrated benefit and would introduce an unnecessary operational obligation.\n\nThe tradeoff is accepting daily freshness. Revisit that choice if a concrete business decision requires fresher data.\n\n## Architectural Invariants\n\n- **Invariant:** The complete daily report is available by 08:00.\n- **Scope:** The agreed daily reporting obligation.\n- **Verification:** Supplied successful-run evidence demonstrates compliance for those runs; it does not guarantee future completion.\n- **Enforcement:** Not evidenced. Establish whether existing controls detect incomplete or late reports before proposing additional checks.\n- **Failure impact:** The agreed report is incomplete or unavailable at its required delivery time.\n\nThe daily schedule is an implementation choice; complete delivery by 08:00 is the requirement it must preserve.",
+      "thread_id": "01a144a6-95fe-73a1-9784-55edfaa70b1c",
+      "error": ""
+    }
+  ]
+}

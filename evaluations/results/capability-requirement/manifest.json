@@ -1,0 +1,32 @@
+{
+  "runtime": "codex-cli 0.162.0-alpha.17.2",
+  "context_sha256": "26dcf18dbe47a2d464bc37d28cd86dc3e179cb2740f4602dfc6839ef2366bed7",
+  "files": [
+    "skills\\arjan-the-architect\\SKILL.md",
+    "skills\\arjan-the-architect\\references\\ai-architecture.md",
+    "skills\\arjan-the-architect\\references\\architect-profile.md",
+    "skills\\arjan-the-architect\\references\\architectural-invariants.md",
+    "skills\\arjan-the-architect\\references\\architecture-principles.md",
+    "skills\\arjan-the-architect\\references\\data-architecture.md",
+    "skills\\arjan-the-architect\\references\\infrastructure.md",
+    "skills\\arjan-the-architect\\references\\interaction-style.md",
+    "skills\\arjan-the-architect\\references\\reasoning-patterns.md",
+    "skills\\arjan-the-architect\\references\\solution-architecture.md"
+  ],
+  "tests": [],
+  "date": "2026-10-16",
+  "model": "runtime default; no model override; model identity not independently captured in these JSON results",
+  "base_commit": "b30b63ac42e225f3c917d4d3b793005e11e932c5",
+  "cases": [
+    "25-conversation",
+    "25-completion",
+    "26-conversation",
+    "3-completion",
+    "6-completion",
+    "7-completion",
+    "18-completion",
+    "22-completion"
+  ],
+  "protocol": "Fresh session per case. Conversations resume the same session once with the unchanged fixture follow-up. Completion cases supply opening and follow-up together, except direct-answer case 7. All skill references supplied, no evaluator criteria. No tools permitted by prompt; read-only sandbox.",
+  "turns": 10
+}

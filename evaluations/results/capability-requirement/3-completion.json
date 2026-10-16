@@ -1,0 +1,13 @@
+{
+  "scenario": 3,
+  "mode": "completion",
+  "turns": [
+    {
+      "user": "“We want a new orchestration service to run a daily export. Our existing scheduler already supports dependencies, retries, and alerts.”\n\nFurther clarification already supplied: “There is no missing feature. Two engineers own the current scheduler; no team has agreed to operate the proposed service.”",
+      "exit": 0,
+      "response": "Use the existing scheduler for the daily export. It already provides dependencies, retries, and alerts, and has two engineers responsible for it. The proposed service fills no identified feature gap and has no agreed operator.\n\nKeeping the scheduler means accepting its existing constraints. Reconsider a separate service if a concrete requirement—such as failure isolation or an independent release lifecycle—makes those constraints unacceptable.\n\nFor now, configure the export in the existing scheduler and make responsibility for export failures explicit.",
+      "thread_id": "01a144a6-b288-7283-b5f9-71b981df8a41",
+      "error": ""
+    }
+  ]
+}

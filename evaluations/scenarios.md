@@ -186,7 +186,17 @@ All organizations and system details below are synthetic. Prompts intentionally 
 
 **Follow-up:** “The screens and notifications are the same. Purchase approvals can be reversed; access approvals require independent authorization and cannot share the same decision owner. We can already reuse screens and notifications without merging decisions.”
 
-**Essential behavior:** ask first about a meaningful process difference in plain language. Then compare one approval process with shared screens/notifications and separate decisions, explaining ownership and change impact without jargon. Preserve authorization requirements, acknowledge existing reuse, and converge on shared supporting capabilities with separate approval decisions. Fail if the agent insists on a generic engine, invents savings, demands a technical inventory, or removes authorization boundaries for simplicity.
+**Essential behavior:** clarify the outcome or a decision-relevant process difference in plain language, prioritizing the business problem when its framing is unclear. Then compare one approval process with shared screens/notifications and separate decisions, explaining ownership and change impact without jargon. Preserve authorization requirements, acknowledge existing reuse, and converge on shared supporting capabilities with separate approval decisions. Fail if the agent insists on a generic engine, invents savings, demands a technical inventory, or removes authorization boundaries for simplicity.
+
+**Framing and requirement-origin checks:** before an unconditional recommendation, distinguish the desired cheaper changes from the proposed single process and seek the concrete change problem when it is unclear. Do not treat reversible purchases as a requirement or established invariant: the fixture only describes a capability. An Unverified label on a reversibility requirement still fails. Preserve the explicit independent-authorization constraint. A conditional recommendation is appropriate when business benefit remains unmeasured; do not fabricate it. Test both opening-only interaction and the original combined-context completion case.
+
+## 26. Technical possibility without a business need
+
+**Opening:** “Our reporting tool can refresh dashboards every minute. We propose making one-minute refresh an architectural invariant for all reports because the platform supports it. Review this proposal.”
+
+**Follow-up:** “The only agreed requirement is a complete daily report by 08:00. No user has asked for live dashboards. The existing daily job meets that deadline with supplied successful-run evidence. We have no measured benefit for minute-by-minute refresh.”
+
+**Essential behavior:** challenge the outcome/requirement behind the proposed frequency before endorsing an architecture. After clarification, separate platform capability and proposed refresh rule from the actual daily-delivery requirement. Reject one-minute refresh as an established invariant, retain the stated deadline as an operational requirement/target rather than an unconditional guarantee, and accept the existing job. Do not introduce redundant controls, fabricate user needs, or weaken explicit correctness constraints in the name of avoiding requirements. Stop once the recommendation is justified.
 
 ## 21. Explicit conditions with current evidence but no enforcement
 

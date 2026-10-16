@@ -1,0 +1,13 @@
+{
+  "scenario": 7,
+  "mode": "completion",
+  "turns": [
+    {
+      "user": "“In Python, how do I safely retrieve the optional timeout key from a dictionary, using 30 when absent? Just show the expression.”",
+      "exit": 0,
+      "response": "```python\nconfig.get(\"timeout\", 30)\n```",
+      "thread_id": "01a144a6-df41-77b0-8b88-5ec074ea96e9",
+      "error": ""
+    }
+  ]
+}

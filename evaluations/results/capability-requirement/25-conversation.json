@@ -1,0 +1,20 @@
+{
+  "scenario": 25,
+  "mode": "conversation",
+  "turns": [
+    {
+      "user": "“I'm the Product Owner, not a developer. We want one approval process for all departments to make changes cheaper. Today each department has its own process. Help me decide whether one shared process is sensible.”",
+      "exit": 0,
+      "response": "One shared approval process could make changes cheaper if departments repeat the same work. But if they need different approval decisions, forcing them into one process may replace duplication with complicated exceptions.\n\nA simpler option could be shared administration—such as recording requests, sending reminders, and tracking status—while departments retain the approval rules they actually need. We haven’t yet established which differences matter.\n\n**Can you give one example of a change you currently have to make separately in several departments’ approval processes?**",
+      "thread_id": "01a144a6-6efa-7a10-82ce-9a2cceec18f3",
+      "error": ""
+    },
+    {
+      "user": "“The screens and notifications are the same. Purchase approvals can be reversed; access approvals require independent authorization and cannot share the same decision owner. We can already reuse screens and notifications without merging decisions.”",
+      "exit": 0,
+      "response": "Keep purchase and access approvals separate, and reuse the screens and notifications. Your existing capabilities already support that split.\n\nThe meaningful difference is decision authority: access approvals require independent authorization. Combining the processes would need to preserve that boundary, adding complexity without an established benefit. Purchase reversibility is a capability; it does not by itself establish a requirement.\n\nThe tradeoff is maintaining separate decision rules while sharing their presentation and communication. Reconsider merging only if a concrete remaining duplication makes changes costly.\n\n**Architectural Invariants**\n\n| Field | Condition |\n|---|---|\n| Invariant | Access approvals must retain independent authorization and must not share the purchase approval decision owner. |\n| Scope | Access approval decisions, including any shared process components. |\n| Verification | Required by your supplied constraint; actual assignments and behavior remain unverified. |\n| Enforcement | No safeguard was described. Check whether existing permission controls enforce this separation before adding anything. |\n| Failure impact | Access could be approved without the required independent authority. |",
+      "thread_id": "01a144a6-6efa-7a10-82ce-9a2cceec18f3",
+      "error": ""
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "scenario": 6,
+  "mode": "completion",
+  "turns": [
+    {
+      "user": "“Review our daily export: one existing scheduled job, a versioned mapping, idempotent writes, and alerts to the owning team. Volume testing meets the agreed deadline. Existing security controls cover the destination. We tested replay and recovery. A second service adds no required capability. Migration is just replacing the mapping after a reversible dry run. The team accepts the scheduler dependency. Is anything material missing?”\n\nFurther clarification already supplied: “There are no additional requirements or known risks beyond the accepted scheduler dependency.”",
+      "exit": 0,
+      "response": "Nothing material is missing from the supplied evidence. Keep the existing scheduled job; a second service has no justified role.\n\nThe described controls and testing support that decision. The scheduler dependency is explicitly accepted, and the reversible dry run keeps migration proportionate. No further review or new validation mechanism is warranted on these facts.\n\n**Architectural Invariants**\n\n| Invariant | Scope | Verification | Enforcement | Failure impact |\n|---|---|---|---|---|\n| Replaying the same export does not duplicate its effects. | Daily export writes and replay. | Idempotent writes and replay testing reported; test coverage not supplied. | Existing idempotent writes; implementation boundary not inspected. | Duplicate downstream effects. |\n| Export access remains within the authorized destination boundary. | Export destination access. | Existing security coverage reported; effective permissions not independently inspected. | Existing security controls, as supplied. | Unauthorized access or disclosure. |",
+      "thread_id": "01a144a6-cdc2-7761-87a5-3a04f1939ea9",
+      "error": ""
+    }
+  ]
+}

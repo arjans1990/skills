@@ -1,0 +1,13 @@
+{
+  "scenario": 25,
+  "mode": "completion",
+  "turns": [
+    {
+      "user": "“I'm the Product Owner, not a developer. We want one approval process for all departments to make changes cheaper. Today each department has its own process. Help me decide whether one shared process is sensible.”\n\nFurther clarification already supplied: “The screens and notifications are the same. Purchase approvals can be reversed; access approvals require independent authorization and cannot share the same decision owner. We can already reuse screens and notifications without merging decisions.”",
+      "exit": 0,
+      "response": "You can sensibly share the screens and notifications, but the evidence supports keeping departmental approval decisions separate.\n\nThe key difference is responsibility: access approvals require independent authorization and a different decision owner. Identical screens do not make those decisions interchangeable. Purchase reversibility is a capability; it does not by itself establish a requirement for the shared process.\n\nMy recommendation is to reuse the common screens and notifications while preserving the distinct approval rules and owners. This shares maintenance where behavior is already common. One combined process would need exceptions for the different responsibilities, and there is no supplied evidence that it would make changes cheaper.\n\nThe remaining business question is: **Which changes are expensive today that shared screens and notifications would still leave duplicated?**\n\n**Architectural Invariants**\n\n- **Invariant:** Access approvals retain independent authorization and their required separate decision owner.\n- **Scope:** Access approval decisions, including any future shared process.\n- **Verification:** The requirement is supplied; compliance in the current implementation has not been demonstrated.\n- **Enforcement:** Not evidenced. Before merging decision handling, establish whether existing approval controls preserve this separation.\n- **Failure impact:** Access could be approved without the required independent authority.",
+      "thread_id": "01a144a6-6f18-7580-81b4-b8cbb3613cb6",
+      "error": ""
+    }
+  ]
+}

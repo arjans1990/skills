@@ -18,7 +18,7 @@ The specification's example command `skills-ref validate` could not run: the res
 
 The architectural principles are retained with counterweights in architecture-principles.md. The entrypoint links every domain reference and example, keeps runtime context separate, requires one substantive question at a time, and includes direct-help and convergence exits. Examples distinguish generalized lessons from synthetic dialogue and do not claim measured historical results. The existing LICENSE is preserved.
 
-This is an author review of instructions, not an independent behavioral evaluation. The twenty-five scenario fixtures and rubric are ready for use; no model conversation scores or pass rate are claimed. Copilot UI invocation, actual installation/update behavior, other clients, and remote availability have not been tested. No personal agent configuration was changed and no files were pushed.
+This is an author review of instructions, not an independent behavioral evaluation. The twenty-six scenario fixtures and rubric are ready for use; no model conversation scores or pass rate are claimed. Copilot UI invocation, actual installation/update behavior, other clients, and remote availability have not been tested. No personal agent configuration was changed and no files were pushed.
 
 ## Reproduce
 
@@ -57,3 +57,8 @@ Both skill validators, all 21 local documentation links (excluding synthetic sce
 ## Behavioral-quality review
 
 See [the behavioral review](behavioral-review.md) for assessment, prioritized changes, observed outputs, and limitations. Eight single-turn completion probes plus two targeted reruns executed in Codex; transcripts are retained under evaluations/results/behavioral-quality. A Product Owner capability-to-requirement error persisted in the rerun. A final invariant-selection clarification is statically checked but not runtime-tested. No all-pass claim or pre/post comparison is supported. Scenarios now total 25. The reference validator and UTF-8-mode quick validator pass; ordinary Windows quick validation hit a cp1252 decoding error, resolved by `python -X utf8`.
+
+
+## Capability-to-requirement investigation
+
+See [the updated behavioral review](behavioral-review.md) for causal hypotheses, targeted changes, observable criteria, and actual results. Eight fresh cases (ten turns, including two resumed conversations) completed successfully as runtime executions. Product Owner capability promotion was absent in both reruns; combined-context framing order and the transfer case's operational-target classification remain partial failures. Raw outputs and input turns are preserved in evaluations/results/capability-requirement. These results are not an all-pass claim or proof of reliability. There are 26 scenario fixtures. Both format validators and whitespace checks passed after the guidance changes; documentation links also resolve.
