@@ -18,11 +18,44 @@ A business rule can constrain correctness in an explicit context, but not every 
 
 ## Choose the boundary and response
 
-When relevant, state a condition with its scope, justification, validation or enforcement point, and violation response. This is a reasoning aid, not a required output template or questionnaire. Ask the most consequential unresolved question first. Consider changes that could invalidate it, including changes after a deployment check has passed.
+During grilling, identify candidate conditions and challenge why correctness requires them. Ask the most consequential unresolved question first. Consider changes that could invalidate a condition, including changes after a deployment check has passed. Do not treat the completion fields below as an interview checklist.
 
 Prefer making conditions executable where practical, using existing constraints, referential checks, schema or contract validation, tests, CI/deployment checks, infrastructure policy validation, or runtime assertions. Monitoring and reconciliation may be appropriate when prevention cannot cover external changes. Avoid checks at every layer unless distinct failure paths justify them. A documented review with a clear owner may suffice for infrequent, low-risk changes; acknowledge what it cannot guarantee.
 
 Choose what happens on violation: for example, reject invalid activation, quarantine an invalid record, fail a contract check, or alert and reconcile drift. The response must fit the risk and availability needs; never prescribe universal fail-closed behavior. A dedicated rules engine or governance platform is not warranted merely because a few conditions exist.
+
+## Make significant conclusions explicit
+
+When a relevant review reveals important invariants and enough information exists to formulate them, include a section titled **Architectural Invariants**. Prefer 2–5 meaningful conditions, but include only one if that is all the decision needs. Omit the section when it adds no value. This is conditional completion behavior, not a mandatory report for every conversation or an automatic ADR.
+
+For each significant invariant, provide these fields in a compact table or short labeled block:
+
+| Field | Content |
+| --- | --- |
+| Invariant | Precise, testable statement of what must remain true; distinguish an established condition from a proposed constraint or unresolved assumption. |
+| Scope | Applicable environment, version, lifecycle stage, or other conditions. |
+| Verification | How compliance can be demonstrated; separate available evidence from a recommended check and state its coverage. |
+| Enforcement | Existing prevention or detection mechanism and its boundary/limitations, or an explicit gap and proposed mechanism. |
+| Failure impact | Concrete consequence of violation, explaining why the condition matters. |
+
+Keep verification and enforcement separate, not a single mutually exclusive status:
+
+- **Verification: Verified** when available evidence demonstrates current compliance within the stated coverage; **Unverified** when it has not been checked; **Violated** when evidence shows noncompliance. Qualify sampled, historical, or partial checks rather than generalizing them to all records or future behavior.
+- **Enforcement: Enforced** only when evidence supports an existing prevention or detection mechanism. Name its limitations. Otherwise state **not evidenced**, **missing**, or **proposed**, as appropriate. Documentation of an intended control alone proves neither compliance nor enforcement.
+
+An invariant can currently be verified without enforcement. A deployed enforcement mechanism may cover new writes while historical records remain unverified or violated. Do not collapse these dimensions or invent evidence to fill the fields. If information is missing, name the gap and make the verification or enforcement recommendation conditional.
+
+Before proposing any new check, assess existing database constraints, type systems, contract tests, deployment mechanisms, or other safeguards. Recognize sufficient guarantees within their actual scope; do not automatically create validation code or duplicate controls for every invariant.
+
+**Synthetic concise output example:**
+
+**Architectural Invariants**
+
+- **Invariant:** Every active datasource identifier resolves to a valid source under the declared mapping rules.
+- **Scope:** All active datasource configurations.
+- **Verification:** Unverified; compare identifiers with the authoritative registry or actual source objects. No inspection results were supplied.
+- **Enforcement:** Not evidenced; reuse existing configuration validation if it checks resolution, otherwise propose a lightweight activation or CI check.
+- **Failure impact:** Broken ingestion, missing data, or incorrect lineage.
 
 ## Small illustrations
 

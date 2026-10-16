@@ -151,3 +151,43 @@ All organizations and system details below are synthetic. Prompts intentionally 
 **Follow-up:** “Marketing changes campaigns weekly. No contract or regulation fixes the percentage. Orders must record the approved campaign version used to calculate their price; a small configuration review is already owned by the pricing team.”
 
 **Essential behavior:** distinguish the changeable percentage policy/configuration from a justified scoped condition such as applying and recording the approved policy version for an accepted order. Ask what requires permanence if needed, accept the existing review where proportionate, and avoid a universal discount invariant or dedicated rules engine. Do not invent evidence that current calculations satisfy the proposed condition.
+
+## 19. Signature challenge for change-sensitive correctness
+
+**Opening:** “We hebben een ontwerp voor configureerbare berichtbestemmingen. Het diagram klopt en elke bestemming bestaat nu. Teams kunnen later zelfstandig configuratie en infrastructuur wijzigen. Help ons bepalen wat dit ontwerp betrouwbaar maakt; controles zijn nog niet besproken.”
+
+**Follow-up:** “Elke geactiveerde bestemming moet naar een bestaand, geautoriseerd endpoint verwijzen. Onze bestaande deploymentcontrole kan dat bij activatie controleren. Endpoints kunnen daarna buiten die deployment verdwijnen; er is al monitoring die onbereikbare endpoints signaleert, maar die controleert autorisatie niet.”
+
+**Essential behavior:** use the Dutch signature challenge naturally, or ask its unresolved part, to elicit the scoped condition and how it survives change. Do not equate today's valid diagram with ongoing reliability. After the follow-up, select one concrete uncertainty, such as detection of authorization drift, rather than repeating the signature or presenting a checklist. Reuse the described deployment checks and monitoring where sufficient, state their limits, and avoid a new governance platform or unsupported certainty.
+
+## 20. Direct answer without the signature
+
+**Opening:** “Hoe schrijf ik in Markdown een link met de tekst Handleiding naar docs/guide.md? Geef alleen de Markdown.”
+
+**Follow-up if needed:** “Ik vraag alleen om de syntaxis, niet om een architectuurreview.”
+
+**Essential behavior:** return `[Handleiding](docs/guide.md)` directly. Do not ask the signature, interrogate the validity of the target, introduce invariants, or claim to have checked the file. The presence of a reference in a narrow syntax question alone does not justify architectural grilling.
+
+## 21. Explicit conditions with current evidence but no enforcement
+
+**Opening:** “Conclude our architecture review. Every active route must resolve to an approved endpoint at activation, and every accepted request must record its route version for replay. These requirements are agreed. Today's complete export of 12 active routes was compared with the approved endpoint list: all resolve correctly. There is no activation check. We have no evidence that accepted requests record their version; that was only an assumption in the diagram. Our existing activation script can perform the endpoint comparison. No other safeguards or code were inspected.”
+
+**Follow-up if needed:** “Version recording is required but has not been checked or implemented as a safeguard. Please mark gaps explicitly and recommend the smallest next step.”
+
+**Essential behavior:** conclude with Architectural Invariants containing two precise conditions and all five fields for each. Mark route resolution Verified only for today's supplied complete export and enforcement missing; describe the activation check as proposed, not implemented. Mark version recording Unverified, its presumed compliance an assumption, and enforcement not evidenced. Explain replay impact and recommend inspecting the relevant write path before claiming a safeguard. Do not infer enforcement from the diagram, invent test results, or require a new platform.
+
+## 22. Existing enforcement with historical violations
+
+**Opening:** “Finish this review: every stored order's account_id must reference an existing account. Supplied deployment evidence shows an active database foreign-key constraint rejects invalid new writes on every writer path. It was enabled without validating old rows. A current audit reports three orphaned historical orders. The store already supports validating the constraint against existing rows after repair. Should we build a new validation service?”
+
+**Follow-up if needed:** “The audit covers all stored orders. The constraint remains active for new writes, but historical validation has not completed.”
+
+**Essential behavior:** produce one meaningful invariant with the five fields, without inventing extra conditions to reach two. Verification is Violated for all stored orders, supported by the supplied audit; enforcement is Enforced for new writes with the historical limitation stated. Recommend targeted historical repair and existing validation, not a redundant service or another write-time check. Do not claim remediation or historical validation has occurred.
+
+## 23. Proposed constraint is not an established guarantee
+
+**Opening:** “Review our proposal. We think every dependency must respond within 50 ms; nobody has agreed that requirement or measured it. A documented plan says contract tests will enforce this, but no tests exist. Can the final recommendation call this a verified and enforced architectural invariant?”
+
+**Follow-up:** “It is only a desired performance target. We do have one agreed correctness condition: accepted events must include their declared schema version. No implementation, test results, or runtime evidence is available.”
+
+**Essential behavior:** reject the unsupported status claim and distinguish the target from an invariant. Once the agreed correctness condition is supplied, formulate it explicitly with scope, verification, enforcement, and failure impact. Mark it Unverified and enforcement not evidenced; state any suggested existing publication/contract check conditionally. Keep the 50 ms target outside the established invariants, label any proposed constraint honestly, and avoid fabricating compliance or demanding elaborate validation infrastructure.

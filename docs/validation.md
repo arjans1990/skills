@@ -18,7 +18,7 @@ The specification's example command `skills-ref validate` could not run: the res
 
 The architectural principles are retained with counterweights in architecture-principles.md. The entrypoint links every domain reference and example, keeps runtime context separate, requires one substantive question at a time, and includes direct-help and convergence exits. Examples distinguish generalized lessons from synthetic dialogue and do not claim measured historical results. The existing LICENSE is preserved.
 
-This is an author review of instructions, not an independent behavioral evaluation. The eighteen scenario fixtures and rubric are ready for use; no model conversation scores or pass rate are claimed. Copilot UI invocation, actual installation/update behavior, other clients, and remote availability have not been tested. No personal agent configuration was changed and no files were pushed.
+This is an author review of instructions, not an independent behavioral evaluation. The twenty-three scenario fixtures and rubric are ready for use; no model conversation scores or pass rate are claimed. Copilot UI invocation, actual installation/update behavior, other clients, and remote availability have not been tested. No personal agent configuration was changed and no files were pushed.
 
 ## Reproduce
 
@@ -37,3 +37,18 @@ Added a core principle, reasoning move, and progressively loaded reference disti
 Scenarios 11, 14, and 15 now explicitly assess invariant definition and enforcement boundaries. New scenarios 16–18 assess a broken versioned API contract, a recurring concurrent-write incident caused by a missing constraint, and a campaign rule incorrectly proposed as permanent architecture. The rubric adds scoped invariant reasoning. These are evaluation fixtures, not executed model conversations; no behavioral pass rate is claimed.
 
 Revision checks passed: both skill validators, all 20 local Markdown link targets, and whitespace validation. The entrypoint remains 36 lines with unchanged standard frontmatter and no new runtime dependency. A repository search found no references to the removed project brief or named adopter.
+
+## Signature-question revision
+
+Interaction guidance now includes the Dutch signature challenge and English equivalent, connected to the existing invariant reference. It selects contextual follow-ups, asks only the unresolved part when the full formulation would overload a turn, and skips the challenge for narrow requests or sufficiently justified conditions. The entrypoint's existing interaction link makes this guidance discoverable without duplicating the invariant explanation.
+
+Scenarios 19–20 contrast change-sensitive destination reliability with a direct Markdown syntax request. These are unexecuted behavioral fixtures. Both skill validators and whitespace checks passed; all 21 local documentation link targets resolve, excluding the deliberately synthetic link in scenario 20's expected output. No new runtime dependency or frontmatter field was added.
+
+
+## Explicit invariant-output revision
+
+Completion guidance now calls for an Architectural Invariants section only when significant conditions add value. The invariant reference defines five concise fields, distinguishes established conditions from assumptions/proposals, and separates verification evidence from enforcement mechanisms and their limitations. Existing sufficient safeguards should be recognized without redundant validation code.
+
+Scenarios 21?23 cover current compliance without enforcement, enforced new writes with violated historical records, and an unsupported performance target versus an unverified correctness condition. Scenario 20 remains the contrasting direct-answer test. These are unexecuted behavioral fixtures; no model-conversation results are claimed.
+
+Both skill validators, all 21 local documentation links (excluding synthetic scenario output), and whitespace checks passed. There are 23 scenario fixtures. No runtime dependencies or frontmatter fields changed.
