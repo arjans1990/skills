@@ -1,0 +1,6 @@
+{
+  "scenario": 6,
+  "exit": 0,
+  "response": "Nothing material is missing from the supplied context. Keep the existing scheduled job: the second service adds operational burden without a required capability. The accepted scheduler dependency is the main remaining tradeoff.\n\nProceed with the reversible dry run and mapping replacement. This recommendation rests on your stated evidence; no further review or new controls are justified here.\n\n**Architectural Invariants**\n\n| Invariant | Scope | Verification | Enforcement | Failure impact |\n|---|---|---|---|---|\n| Reprocessing the same export produces no duplicate effects. | Daily exports and replay | Replay testing reported; coverage details not supplied. | Idempotent writes reported; implementation not inspected. | Duplicate downstream data or effects. |\n| The export applies the intended mapping version. | Mapping replacement and subsequent runs | Versioning and a reversible dry run are reported; runtime version selection remains unverified. | Activation safeguards not described. Use the dry run to confirm selection; reuse any existing deployment check. | Incorrect exported values despite successful execution. |",
+  "error": ""
+}

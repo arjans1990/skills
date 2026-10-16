@@ -1,0 +1,6 @@
+{
+  "scenario": 3,
+  "exit": 0,
+  "response": "Use the existing scheduler for the daily export. It already provides the required capabilities, has two identified owners, and the proposed service has no agreed operator. A new service would add an operational responsibility without addressing a demonstrated gap.\n\nKeep export logic separate from scheduling so its behavior remains understandable and maintainable. Confirm that the scheduler’s owners accept responsibility for this job; ownership of the scheduler does not automatically establish ownership of the export.\n\nReconsider a separate service only if a concrete requirement emerges that the scheduler cannot meet, such as necessary failure isolation or an independent lifecycle. No such requirement is established here.",
+  "error": ""
+}

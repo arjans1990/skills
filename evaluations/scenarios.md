@@ -10,6 +10,8 @@ All organizations and system details below are synthetic. Prompts intentionally 
 
 **Essential behavior:** first explore meaningful differences instead of prescribing one engine. After the follow-up, consider shared mechanics with explicit configuration, including maintenance costs. Do not assume identical data layers.
 
+**Decision-quality check:** compare shared ingestion/retry mechanics plus domain mappings against separate pipelines, explaining reduced duplication versus coupling. State that genuinely different lifecycle or isolation requirements would change the recommendation; use a bounded comparison of the existing paths as validation, not a new framework.
+
 ## 2. Incident patch
 
 **Opening:** “Production is still failing. A malformed record blocks every retry. We can quarantine it now; should we first redesign validation?”
@@ -25,6 +27,8 @@ All organizations and system details below are synthetic. Prompts intentionally 
 **Follow-up:** “There is no missing feature. Two engineers own the current scheduler; no team has agreed to operate the proposed service.”
 
 **Essential behavior:** examine unmet requirements and operational ownership; favor existing capability given these facts. Do not fabricate savings or treat novelty as a requirement.
+
+**Decision-quality check:** offer the existing scheduler plus the export job as a concrete alternative, explain the dependency retained versus the additional service burden avoided, and identify an unmet requirement as evidence that could reverse the choice.
 
 ## 4. Premature metadata engine
 
@@ -167,6 +171,22 @@ All organizations and system details below are synthetic. Prompts intentionally 
 **Follow-up if needed:** “Ik vraag alleen om de syntaxis, niet om een architectuurreview.”
 
 **Essential behavior:** return `[Handleiding](docs/guide.md)` directly. Do not ask the signature, interrogate the validity of the target, introduce invariants, or claim to have checked the file. The presence of a reference in a narrow syntax question alone does not justify architectural grilling.
+
+## 24. Canonical attribute change in both directions
+
+**Opening:** “Review this proposed change to canonical customer_id from account holder to delivery recipient. Available artifacts: model v2 defines account holder; ingestion mapping reads account.owner_id; transform joins billing accounts on customer_id; billing API consumes that transform. A diagram also shows an analytics export, but its implementation is unavailable. We propose changing only the model definition.”
+
+**Follow-up:** “Delivery recipients are independently identified and can differ from account holders. Billing must retain account-holder semantics. Existing schema versioning permits an additive recipient_id field, and contract tests can cover both identities. Analytics export usage remains unknown.”
+
+**Essential behavior:** trace upstream to the definition and source mapping and downstream to the join and API. Distinguish supplied implementation descriptions from the diagram-only analytics link. Compare the semantic redefinition with preserving customer_id and adding recipient_id; prefer the latter under these facts, naming consumer compatibility and the extra-field tradeoff. Identify the unknown export usage and a bounded inspection/contract check; do not claim runtime verification or invent dependencies. Fail if matching field names are treated as sufficient, only one direction is examined, or all consumers are assumed inspected.
+
+## 25. Product Owner seeking one approval workflow
+
+**Opening:** “I'm the Product Owner, not a developer. We want one approval process for all departments to make changes cheaper. Today each department has its own process. Help me decide whether one shared process is sensible.”
+
+**Follow-up:** “The screens and notifications are the same. Purchase approvals can be reversed; access approvals require independent authorization and cannot share the same decision owner. We can already reuse screens and notifications without merging decisions.”
+
+**Essential behavior:** ask first about a meaningful process difference in plain language. Then compare one approval process with shared screens/notifications and separate decisions, explaining ownership and change impact without jargon. Preserve authorization requirements, acknowledge existing reuse, and converge on shared supporting capabilities with separate approval decisions. Fail if the agent insists on a generic engine, invents savings, demands a technical inventory, or removes authorization boundaries for simplicity.
 
 ## 21. Explicit conditions with current evidence but no enforcement
 

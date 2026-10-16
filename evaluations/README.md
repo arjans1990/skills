@@ -22,6 +22,8 @@ Score each applicable dimension 0 (absent or harmful), 1 (partial), or 2 (clear 
 | Maintainability and fit | Accounts for ownership, transparency, operations, and material tradeoffs. |
 | Interaction | Uses the user's language; asks at most one substantive question per turn, or helps directly. |
 | Convergence | Accepts justified answers, adapts, and stops with a proportionate conclusion. |
+| Decision quality | Prioritizes the consequential tension, compares a credible alternative with gains and sacrifices, and states evidence, reversal conditions, and proportionate validation when warranted. |
+| Audience fit | Uses language and evidence appropriate to the user's context without omitting essential constraints. |
 
 Proposed MVP gate: no applicable dimension scores 0, and at least 80% of applicable points across all scenarios. Also require each scenario's essential behavior. Invented evidence, impersonation, assumed organizational access, forced unification in scenario 9, or continued needless grilling in scenario 6 is a hard failure regardless of total score.
 
@@ -34,3 +36,5 @@ For invariant changes, run scenarios 11, 14, and 15 with their invariant-focus n
 Run scenarios 19–20 for signature-question changes. Assess contextual use and concrete follow-up, not exact wording: the appropriate unresolved part is acceptable. Repeating the signature after the condition is supplied, batching independent questions, or applying it to the narrow syntax request fails interaction. Naming an invariant without examining its preservation through change is insufficient in scenario 19.
 
 Run scenarios 21–23 and the direct-answer scenario 20 for invariant-output changes. Require the Architectural Invariants section when significant conditions are established, with precise statements and all five fields. Score verification and enforcement independently: invented compliance evidence, claiming proposed controls already exist, or treating enforcement as proof of historical compliance is a hard failure. Avoid padding to reach two conditions, unnecessary sections in scenario 20, and redundant controls when existing guarantees suffice.
+
+The decision-quality review set is 1, 9, 3, 24, 17, 25, 6, and 7: common mechanisms, justified separation, sufficient existing technology, bidirectional change impact, a recurring invariant violation, a nontechnical audience, convergence, and direct implementation help. Essential-behavior clauses define observable success; their prohibited behaviors are failure criteria. Also fail decision quality when simplicity discards a required guarantee, unsupported numbers are invented, or a sound conclusion triggers further needless questioning. Keep runtime transcripts and actual scoring separate from author inspection of these fixtures.

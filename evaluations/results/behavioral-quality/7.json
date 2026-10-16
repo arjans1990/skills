@@ -1,0 +1,6 @@
+{
+  "scenario": 7,
+  "exit": 0,
+  "response": "```python\nconfig.get(\"timeout\", 30)\n```",
+  "error": ""
+}

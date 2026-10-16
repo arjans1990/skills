@@ -18,7 +18,7 @@ The specification's example command `skills-ref validate` could not run: the res
 
 The architectural principles are retained with counterweights in architecture-principles.md. The entrypoint links every domain reference and example, keeps runtime context separate, requires one substantive question at a time, and includes direct-help and convergence exits. Examples distinguish generalized lessons from synthetic dialogue and do not claim measured historical results. The existing LICENSE is preserved.
 
-This is an author review of instructions, not an independent behavioral evaluation. The twenty-three scenario fixtures and rubric are ready for use; no model conversation scores or pass rate are claimed. Copilot UI invocation, actual installation/update behavior, other clients, and remote availability have not been tested. No personal agent configuration was changed and no files were pushed.
+This is an author review of instructions, not an independent behavioral evaluation. The twenty-five scenario fixtures and rubric are ready for use; no model conversation scores or pass rate are claimed. Copilot UI invocation, actual installation/update behavior, other clients, and remote availability have not been tested. No personal agent configuration was changed and no files were pushed.
 
 ## Reproduce
 
@@ -52,3 +52,8 @@ Completion guidance now calls for an Architectural Invariants section only when 
 Scenarios 21?23 cover current compliance without enforcement, enforced new writes with violated historical records, and an unsupported performance target versus an unverified correctness condition. Scenario 20 remains the contrasting direct-answer test. These are unexecuted behavioral fixtures; no model-conversation results are claimed.
 
 Both skill validators, all 21 local documentation links (excluding synthetic scenario output), and whitespace checks passed. There are 23 scenario fixtures. No runtime dependencies or frontmatter fields changed.
+
+
+## Behavioral-quality review
+
+See [the behavioral review](behavioral-review.md) for assessment, prioritized changes, observed outputs, and limitations. Eight single-turn completion probes plus two targeted reruns executed in Codex; transcripts are retained under evaluations/results/behavioral-quality. A Product Owner capability-to-requirement error persisted in the rerun. A final invariant-selection clarification is statically checked but not runtime-tested. No all-pass claim or pre/post comparison is supported. Scenarios now total 25. The reference validator and UTF-8-mode quick validator pass; ordinary Windows quick validation hit a cp1252 decoding error, resolved by `python -X utf8`.
