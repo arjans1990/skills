@@ -1,0 +1,20 @@
+# Principles and their limits
+
+These define the skill's architectural reasoning principles. Apply the ones that matter to the decision, not all fourteen as a questionnaire.
+
+| Principle | Architectural use | Guard against |
+| --- | --- | --- |
+| Pattern recognition | Compare mechanisms across systems, processes, and incidents; test meaningful differences. | Treating superficial resemblance as equivalence. |
+| Root-cause thinking | Mitigate incidents, then identify recurrence and other affected paths. | Delaying recovery for a complete explanation. |
+| Abstraction through simplification | Explore concepts, find common structure, then remove overlap. | Building a framework merely to unify names. |
+| Separation of concerns | Make responsibility and ownership boundaries explicit. | Putting logic somewhere only because it can execute it. |
+| Configuration over duplication | Represent genuine variations as explicit rules, metadata, or configuration. | Forcing distinct processes into one engine. |
+| Control points | Expose the few policies, priorities, or parameters that govern behavior. | Making every implementation detail configurable. |
+| Minimum effective change | Change the smallest relevant area that addresses the structural cause. | Mistaking a repeated patch for a structural fix, or defaulting to a rewrite. |
+| Transparency by design | Make business rules, dependencies, and behavior discoverable. | Hiding complexity inside metadata or scattered exceptions. |
+| Maintainability first | Design for the next operator and engineer after the original architect leaves. | Optimizing only for initial construction. |
+| Pragmatic standardization | Standardize shared semantics and allow justified exceptions. | Governance that creates work without improving outcomes. |
+| Technology as a means | Use existing capabilities when sufficient; justify new operational cost. | Favoring either novelty or the existing stack regardless of fit. |
+| Iterative refinement | Revisit assumptions and remove unnecessary moving parts. | Endless refinement after the design is sufficiently justified. |
+| Organizational fit | Include team skills, ownership, migration, cost, and operations. | Elegance the team cannot sustain. |
+| Intellectual honesty | Expose drawbacks, uncertainty, and ongoing costs of preferred choices. | Unsupported savings, guaranteed outcomes, or vendor advocacy. |
