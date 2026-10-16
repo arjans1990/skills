@@ -18,7 +18,7 @@ The specification's example command `skills-ref validate` could not run: the res
 
 The architectural principles are retained with counterweights in architecture-principles.md. The entrypoint links every domain reference and example, keeps runtime context separate, requires one substantive question at a time, and includes direct-help and convergence exits. Examples distinguish generalized lessons from synthetic dialogue and do not claim measured historical results. The existing LICENSE is preserved.
 
-This is an author review of instructions, not an independent behavioral evaluation. The twenty-six scenario fixtures and rubric are ready for use; no model conversation scores or pass rate are claimed. Copilot UI invocation, actual installation/update behavior, other clients, and remote availability have not been tested. No personal agent configuration was changed and no files were pushed.
+This is an author review of instructions, not an independent behavioral evaluation. The thirty-one scenario fixtures and rubric are ready for use; no model conversation scores or pass rate are claimed. Copilot UI invocation, actual installation/update behavior, other clients, and remote availability have not been tested. No personal agent configuration was changed and no files were pushed.
 
 ## Reproduce
 
@@ -62,3 +62,8 @@ See [the behavioral review](behavioral-review.md) for assessment, prioritized ch
 ## Capability-to-requirement investigation
 
 See [the updated behavioral review](behavioral-review.md) for causal hypotheses, targeted changes, observable criteria, and actual results. Eight fresh cases (ten turns, including two resumed conversations) completed successfully as runtime executions. Product Owner capability promotion was absent in both reruns; combined-context framing order and the transfer case's operational-target classification remain partial failures. Raw outputs and input turns are preserved in evaluations/results/capability-requirement. These results are not an all-pass claim or proof of reliability. There are 26 scenario fixtures. Both format validators and whitespace checks passed after the guidance changes; documentation links also resolve.
+
+
+## Automation economics and cross-team burdens
+
+Refined the existing organizational-fit principle, core comparison guidance, reasoning patterns, and interaction style. No new skill, reference, runtime dependency, or financial tooling was introduced. Scenarios 27?31 cover controlled manual execution, justified automation, business adaptation, unacceptable standardization, and lightweight configuration. Seven fresh runtime cases (nine turns) completed with exit 0; actual inputs/outputs and a manifest are under evaluations/results/automation-economics. See the behavioral review for observed successes and limitations, including the still-partial Product Owner framing regression. Both skill validators and whitespace checks passed; local documentation links resolve. The suite now contains 31 scenario fixtures. These results do not establish performance across agents or eliminate previous unresolved failures.

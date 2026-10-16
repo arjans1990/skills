@@ -1,0 +1,20 @@
+{
+  "scenario": 25,
+  "mode": "conversation",
+  "turns": [
+    {
+      "user": "“I'm the Product Owner, not a developer. We want one approval process for all departments to make changes cheaper. Today each department has its own process. Help me decide whether one shared process is sensible.”",
+      "exit": 0,
+      "response": "One shared approval process could make changes cheaper if departments share the same approval rules. If their differences are necessary, combining everything may move the complexity into exceptions that someone must maintain.\n\nI’ll use the supplied architecture guidance and your description; we don’t yet have evidence about those differences. A simpler option to compare is a shared approval service with department-specific rules, alongside keeping the current processes. That could share routine work while preserving necessary differences, but it still needs clear ownership.\n\n**What is one concrete difference between departments’ approval processes today, and why does that difference exist?**",
+      "thread_id": "01a144ab-31f2-7712-b3e9-392d89b45cfc",
+      "error": ""
+    },
+    {
+      "user": "“The screens and notifications are the same. Purchase approvals can be reversed; access approvals require independent authorization and cannot share the same decision owner. We can already reuse screens and notifications without merging decisions.”",
+      "exit": 0,
+      "response": "That supports sharing the screens and notifications while keeping approval decisions separate. Access approvals need independent authorization and a distinct decision owner. Purchase reversibility is a capability; we haven’t established whether it must be preserved.\n\nSince you can already reuse the common parts, merging the processes needs an additional benefit to justify the coordination and maintenance burden.\n\n**Which recurring change is expensive today that sharing screens and notifications would still leave expensive?**",
+      "thread_id": "01a144ab-31f2-7712-b3e9-392d89b45cfc",
+      "error": ""
+    }
+  ]
+}

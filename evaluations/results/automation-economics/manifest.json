@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-16",
+  "runtime": "codex-cli 0.162.0-alpha.17.2",
+  "model": "Runtime default; no override. Identity not independently captured.",
+  "context_sha256": "bd677bd68e860ac11238d9cf5d35f06b8daacc3127c68f5ba10cb68db8218db7",
+  "base_commit": "d894018f57eb65b034ed1bf94851097c2293629e",
+  "files": [
+    "skills\\arjan-the-architect\\SKILL.md",
+    "skills\\arjan-the-architect\\references\\ai-architecture.md",
+    "skills\\arjan-the-architect\\references\\architect-profile.md",
+    "skills\\arjan-the-architect\\references\\architectural-invariants.md",
+    "skills\\arjan-the-architect\\references\\architecture-principles.md",
+    "skills\\arjan-the-architect\\references\\data-architecture.md",
+    "skills\\arjan-the-architect\\references\\infrastructure.md",
+    "skills\\arjan-the-architect\\references\\interaction-style.md",
+    "skills\\arjan-the-architect\\references\\reasoning-patterns.md",
+    "skills\\arjan-the-architect\\references\\solution-architecture.md"
+  ],
+  "cases": [
+    "27-conversation",
+    "28-completion",
+    "29-completion",
+    "30-completion",
+    "31-completion",
+    "25-conversation",
+    "7-completion"
+  ],
+  "protocol": "Fresh case sessions; conversation cases resume once with unchanged follow-up; completion cases receive opening and follow-up together except narrow case 7. All references injected, no evaluator criteria. Tools prohibited by prompt, read-only sandbox.",
+  "turns": 9
+}

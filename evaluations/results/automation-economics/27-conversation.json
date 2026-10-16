@@ -1,0 +1,20 @@
+{
+  "scenario": 27,
+  "mode": "conversation",
+  "turns": [
+    {
+      "user": "“Onze afdeling wil een maatwerkkoppeling zodat we een handmatige import niet meer hoeven te doen. Het scheelt ons werk; IT heeft een ander budget. Kun je de architectuur beoordelen?”",
+      "exit": 0,
+      "response": "De tijdwinst voor jullie afdeling is een relevant voordeel, maar een ander IT-budget maakt de koppeling niet goedkoper voor de organisatie. Maatwerk verschuift werk naar bouw, beheer en toekomstige wijzigingen.\n\nOp basis van de gegeven informatie is maatwerk daarom nog niet onderbouwd. Vergelijk het met de bestaande import, een eenvoudiger procedure of beschikbare standaardfunctionaliteit. De doorslag is of de terugkerende tijdwinst en vermeden fouten opwegen tegen de structurele IT-last.\n\nHoeveel tijd kost deze handmatige import jullie afdeling in totaal per maand?",
+      "thread_id": "01a144aa-bc40-7282-b176-397216bec8f5",
+      "error": ""
+    },
+    {
+      "user": "“De gecontroleerde standaardimport kost vijf minuten, twee keer per maand. Er zijn geen bekende fouten of extra eisen; de werkinstructie en vervanging zijn geregeld. De koppeling zou vijf jaar blijven draaien. IT schat vier dagen bouw/test en daarna twee uur onderhoud per maand, exclusief incidenten en beveiligingswijzigingen. Onze afdeling krijgt de tijdwinst, IT de structurele lasten. Geldtarieven en andere baten zijn onbekend.”",
+      "exit": 0,
+      "response": "Mijn advies: behoud de gecontroleerde standaardimport. De aangeleverde cijfers rechtvaardigen deze maatwerkkoppeling niet.\n\n| Inspanning over vijf jaar | Standaardimport | Maatwerkkoppeling |\n|---|---:|---:|\n| Handmatige uitvoering | 10 uur | Vervalt naar verwachting |\n| Bouw en test | Geen extra bouw | 4 werkdagen |\n| IT-onderhoud | Niet opgegeven | 120 uur |\n| Incidenten en beveiligingswijzigingen | Niet opgegeven | Nog niet meegerekend |\n\nAlleen het geschatte onderhoud vraagt al twaalf keer zoveel tijd als de import bespaart. Jullie afdeling ontvangt de tijdwinst; IT draagt de bouw en structurele lasten. Het aparte budget verandert die totale inspanning niet.\n\nGeldtarieven ontbreken, dus een financiële uitkomst kunnen we niet berekenen. Maar zonder bekende fouten, aanvullende eisen of andere baten is er voldoende grond om van maatwerk af te zien. De werkinstructie en vervanging ondersteunen bovendien het voortzetten van de huidige aanpak.\n\nHeropen de beslissing bij aanzienlijk hogere volumes, aantoonbare foutschade, nieuwe eisen of een standaardkoppeling die de bouw- en beheerlast wezenlijk verlaagt.",
+      "thread_id": "01a144aa-bc40-7282-b176-397216bec8f5",
+      "error": ""
+    }
+  ]
+}

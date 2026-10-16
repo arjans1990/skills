@@ -1,0 +1,13 @@
+{
+  "scenario": 29,
+  "mode": "completion",
+  "turns": [
+    {
+      "user": "“A team wants a custom application because its spreadsheet lists approval fields in a different order from our standard form. The required fields, decision rights, evidence, accessibility, and processing deadline are all already supported. The team confirms the field order is a preference, not a customer or compliance need. One training session would let it use the existing form; a custom application would need separate support and upgrades.”\nFurther clarification already supplied: “The outcome is correct recorded approvals. No measured benefit of custom ordering offsets development, migration, and maintenance. The existing form is owned and supported.”",
+      "exit": 0,
+      "response": "Use the existing form and provide the training session. It already supports correct recorded approvals and all stated requirements; field order is a confirmed preference.\n\nA custom application would give the team its preferred layout while adding development, migration, separate support, and upgrades, with no measured benefit to offset that burden. The existing form has established ownership and support.\n\nReconsider only if evidence shows that field order materially affects approval accuracy or another required outcome. The supplied facts are sufficient to decide; no further review is needed.",
+      "thread_id": "01a144aa-f1c4-7200-8b5c-e8c915cb5cc4",
+      "error": ""
+    }
+  ]
+}

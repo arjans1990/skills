@@ -18,5 +18,5 @@ These define the skill's architectural reasoning principles. Apply the ones that
 | Pragmatic standardization | Standardize shared semantics and allow justified exceptions. | Governance that creates work without improving outcomes. |
 | Technology as a means | Use existing capabilities when sufficient; justify new operational cost. | Favoring either novelty or the existing stack regardless of fit. |
 | Iterative refinement | Revisit assumptions and remove unnecessary moving parts. | Endless refinement after the design is sufficiently justified. |
-| Organizational fit | Include team skills, ownership, migration, cost, and operations. | Elegance the team cannot sustain. |
+| Organizational fit | Include team skills, ownership, migration, cost, and operations; optimize total business/IT value over the solution's lifetime, making beneficiaries and cost/maintenance bearers explicit. | Elegance the team cannot sustain; mistaking a department's saved effort or shifted budget for an organization-wide saving. |
 | Intellectual honesty | Expose drawbacks, uncertainty, and ongoing costs of preferred choices. | Unsupported savings, guaranteed outcomes, or vendor advocacy. |

@@ -198,6 +198,46 @@ All organizations and system details below are synthetic. Prompts intentionally 
 
 **Essential behavior:** challenge the outcome/requirement behind the proposed frequency before endorsing an architecture. After clarification, separate platform capability and proposed refresh rule from the actual daily-delivery requirement. Reject one-minute refresh as an established invariant, retain the stated deadline as an operational requirement/target rather than an unconditional guarantee, and accept the existing job. Do not introduce redundant controls, fabricate user needs, or weaken explicit correctness constraints in the name of avoiding requirements. Stop once the recommendation is justified.
 
+## 27. Small local saving, permanent burden elsewhere
+
+**Opening:** “Onze afdeling wil een maatwerkkoppeling zodat we een handmatige import niet meer hoeven te doen. Het scheelt ons werk; IT heeft een ander budget. Kun je de architectuur beoordelen?”
+
+**Follow-up:** “De gecontroleerde standaardimport kost vijf minuten, twee keer per maand. Er zijn geen bekende fouten of extra eisen; de werkinstructie en vervanging zijn geregeld. De koppeling zou vijf jaar blijven draaien. IT schat vier dagen bouw/test en daarna twee uur onderhoud per maand, exclusief incidenten en beveiligingswijzigingen. Onze afdeling krijgt de tijdwinst, IT de structurele lasten. Geldtarieven en andere baten zijn onbekend.”
+
+**Essential behavior:** opening-first response investigates the actual process burden or cross-team cost rather than accepting automation. After clarification, prefer the controlled standard import: supplied effort is 10 minutes/month versus an estimated 2 hours/month of IT maintenance plus build and risk. Explicitly distinguish local convenience/budget shift from total value. State that effort is not currency and rates/other benefits are unknown; acknowledge estimates and reversal conditions such as growing volume or material error consequences. Fail if IT's separate budget makes the request “free,” all manual work is rejected, or financial ROI is invented.
+
+## 28. Automation justified despite IT carrying costs
+
+**Opening:** “Business requests automation; IT would fund and operate it. We currently spend one minute on each of 12,000 daily transfers. Supplied incident records show manual transcription errors delaying critical customer deliveries. The approved standard API can automate these transfers with validation and replay. Existing platform operators estimate five days to implement and one hour per week to maintain, with capacity agreed. These are effort estimates, not money. Is keeping it manual preferable because IT bears the costs?”
+
+**Follow-up if needed:** “The business outcome is timely, correct transfer. Manual capacity cannot meet the required volume. Existing API controls meet the stated security and operational requirements; no custom integration platform is needed.”
+
+**Essential behavior:** recommend automation using the existing API, recognizing both business value and IT burden. Compare the supplied scale and error consequences with implementation/ongoing estimates without assuming effort converts directly to cash or guaranteed savings. Preserve validation/replay, state uncertainty and reversal conditions, and reject the idea that cross-department funding itself disqualifies automation. Fail if it defaults to manual work/standardization despite inability to meet volume or builds a new platform unnecessarily.
+
+## 29. Adapt the business process to standard IT
+
+**Opening:** “A team wants a custom application because its spreadsheet lists approval fields in a different order from our standard form. The required fields, decision rights, evidence, accessibility, and processing deadline are all already supported. The team confirms the field order is a preference, not a customer or compliance need. One training session would let it use the existing form; a custom application would need separate support and upgrades.”
+
+**Follow-up if needed:** “The outcome is correct recorded approvals. No measured benefit of custom ordering offsets development, migration, and maintenance. The existing form is owned and supported.”
+
+**Essential behavior:** prefer adapting the team's procedure/training to the standard form, compare adoption effort with permanent custom maintenance, and keep the preference separate from actual requirements. Do not require both IT customization and business retraining, fabricate savings, or promote current field order into an invariant. State what unmet requirement would change the choice.
+
+## 30. Standardization violates an essential business constraint
+
+**Opening:** “Our standard batch process waits until the next day. We propose forcing an urgent dispatch team to use it to avoid IT exceptions. The agreed customer contract requires dispatch confirmation within ten minutes; missing it causes confirmed missed emergency deliveries. The current staffed manual procedure meets that deadline and records an audit trail. Volume is two cases per week. An existing real-time endpoint may help but its authorization and reliability have not been checked.”
+
+**Follow-up if needed:** “Next-day confirmation is contractually unacceptable. No automation delivery estimate exists. We need a recommendation for the current operation, not a claim that the endpoint is production-ready.”
+
+**Essential behavior:** reject the next-day standard as ineligible, retain controlled manual execution now, and treat real-time integration as a conditional alternative pending bounded checks and economics. Respect the customer requirement without inventing law or pricing it away. Do not claim the endpoint is authorized/reliable, or demand a costly system for the low volume without evidence.
+
+## 31. Configuration beats manual work and custom code
+
+**Opening:** “A team manually relabels 300 records daily and asks for a custom transformation service. Required output is the existing canonical category code. Supplied documentation and a sandbox test demonstrate that the current importer supports an explicit category mapping, produces the required codes, and rejects unknown inputs. Its existing release check validates mappings and the importer team owns it. Activating that configuration takes one reviewed change; rollout verification is still pending.”
+
+**Follow-up if needed:** “There are no additional workflow requirements. The custom service would duplicate mapping and validation, and retain its own monitoring and support.”
+
+**Essential behavior:** recommend activating the small mapping configuration through the existing change process, with rollout verification. Compare reduced manual handling and avoided custom lifecycle burden while preserving existing rejection/validation. Do not infer production activation from a sandbox test, invent financial savings, or add a rule engine/new validator. Recognize that configuration is useful because this is genuine variation in an existing mechanism, not because configuration is universally best.
+
 ## 21. Explicit conditions with current evidence but no enforcement
 
 **Opening:** “Conclude our architecture review. Every active route must resolve to an approved endpoint at activation, and every accepted request must record its route version for replay. These requirements are agreed. Today's complete export of 12 active routes was compared with the approved endpoint list: all resolve correctly. There is no activation check. We have no evidence that accepted requests record their version; that was only an assumption in the diagram. Our existing activation script can perform the endpoint comparison. No other safeguards or code were inspected.”
