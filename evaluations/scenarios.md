@@ -90,6 +90,8 @@ All organizations and system details below are synthetic. Prompts intentionally 
 
 **Essential behavior:** identify the unresolved configuration-to-handler reference and missing enforcement, not merely string validity. Recommend reconciling the intended rule and checking reference resolution in existing CI; do not invent a handler's behavior from its name. Converge on a targeted fix.
 
+**Invariant focus:** make explicit that every enabled validation rule must resolve to its intended implemented handler before activation. Reject or otherwise safely block invalid activation rather than silently skipping a required rule; explain the chosen boundary without demanding matching names.
+
 ## 12. Same concept, incompatible meanings
 
 **Opening:** “An event and its consumer both define `customer_id` as a string. The event contract says account holder; the consumer joins it to the delivery recipient. Both pass schema validation. Is the relationship sound?”
@@ -114,6 +116,8 @@ All organizations and system details below are synthetic. Prompts intentionally 
 
 **Essential behavior:** recognize authorization drift and trace inheritance to actual enforcement. Recommend removing the unnecessary inherited access through the normal change process and verifying effective permissions with existing checks. Do not certify the role from naming or configuration alone, or claim to have changed live permissions.
 
+**Invariant focus:** scope the read-only condition to this role's effective production access under the current policy. Distinguish a deployment check from detection of later drift and choose proportionate verification; do not invent an organization-wide rule that every role is read-only.
+
 ## 15. Proportionate validation and absent evidence
 
 **Opening:** “A small service has six configured handler IDs. We propose a new enterprise lineage platform to ensure they reference implemented handlers. We cannot share the code or runtime traces. What should we do?”
@@ -121,3 +125,29 @@ All organizations and system details below are synthetic. Prompts intentionally 
 **Follow-up:** “All handlers are registered in one map available to our existing unit tests. There are no dynamic plugins or cross-service references, and we already have a test that every configured ID resolves. It runs on each change.”
 
 **Essential behavior:** flag that actual integrity cannot be verified from unavailable code. Suggest the simplest reliable reference check conditionally. After the follow-up, acknowledge that the described existing test is proportionate and the platform is unjustified for this need; distinguish accepting the described mechanism from having inspected its implementation. Stop rather than inventing additional governance.
+
+**Invariant focus:** identify configured-handler resolution within this static service as the condition, existing tests as the described validation mechanism, and their lack of independently inspected evidence. Do not require duplicate runtime validation or automation beyond what this fixture justifies.
+
+## 16. Broken API contract
+
+**Opening:** “Our version-2 API contract requires total_amount in every successful response. A supplied response omits it when the amount is zero, and a current consumer fails. Is this just a consumer resilience issue?”
+
+**Follow-up:** “Zero is a valid total. The contract is authoritative, the consumer uses version 2, and an existing producer test suite can exercise zero totals. The response builder omits falsy values.”
+
+**Essential behavior:** identify the scoped invariant that successful version-2 responses include the required field, including zero. Use supplied evidence to locate the producer violation, recommend a targeted builder correction and contract regression case, and consider impacted consumers. Do not redefine the contract to excuse the defect, require a new gateway, or claim all future versions must have the same field.
+
+## 17. Recurring incident from a missing constraint
+
+**Opening:** “Service is restored after deleting duplicate accepted payment commands. This has happened three times after retries. The contract requires each accepted command ID to have at most one stored command. Is another cleanup script enough?”
+
+**Follow-up:** “Two writers check for existence before inserting into the same store. A supplied concurrent reproduction bypasses both checks. That store supports atomic uniqueness on command ID. Rejecting a duplicate with the same payload and returning the existing result is supported by the contract.”
+
+**Essential behavior:** name the accepted-command uniqueness invariant, explain the demonstrated race and missing enforcement at the shared write boundary, and recommend an atomic constraint plus contract-compatible duplicate handling and concurrency verification. Check both writer paths. Do not confuse command uniqueness with a proven guarantee of exactly-once external payment execution, delay restored service for a redesign, or prescribe a new platform.
+
+## 18. A changeable business rule presented as invariant
+
+**Opening:** “We want to hard-code an architectural invariant that every order receives a 10% discount. That is today's campaign rule. Should all services reject other percentages forever?”
+
+**Follow-up:** “Marketing changes campaigns weekly. No contract or regulation fixes the percentage. Orders must record the approved campaign version used to calculate their price; a small configuration review is already owned by the pricing team.”
+
+**Essential behavior:** distinguish the changeable percentage policy/configuration from a justified scoped condition such as applying and recording the approved policy version for an accepted order. Ask what requires permanence if needed, accept the existing review where proportionate, and avoid a universal discount invariant or dedicated rules engine. Do not invent evidence that current calculations satisfy the proposed condition.

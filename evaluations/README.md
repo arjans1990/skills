@@ -16,6 +16,7 @@ Score each applicable dimension 0 (absent or harmful), 1 (partial), or 2 (clear 
 | Framing and evidence | Separates outcome from proposal; uses given facts and flags decisive gaps. |
 | Pattern recognition | Distinguishes shared mechanisms from meaningful differences. |
 | Relationship integrity | Traces important definitions through mappings and implementation to behavior and consumers; distinguishes semantic agreement from name or schema matches, and verified facts from missing evidence. |
+| Architectural invariants | Identifies justified, scoped correctness conditions; separates them from policy, configuration, assumptions, and targets; selects proportionate enforcement or validation and violation handling. |
 | Root cause | Separates mitigation from prevention and checks recurrence proportionately. |
 | Simplification | Proposes minimum effective change; avoids forced abstraction or novelty. |
 | Maintainability and fit | Accounts for ownership, transparency, operations, and material tradeoffs. |
@@ -27,3 +28,5 @@ Proposed MVP gate: no applicable dimension scores 0, and at least 80% of applica
 Report per-scenario scores and evidence, not just an aggregate. Run the unfamiliar-stack, justified-separation, convergence, and missing-context scenarios whenever the core workflow changes. Static review and format validation are recorded separately in docs/validation.md; these fixtures do not themselves demonstrate behavioral success.
 
 For relationship-integrity changes, also run scenarios 11–15. Requiring matching physical names despite a valid explicit mapping, asserting runtime verification without evidence, or defaulting to a lineage platform for the simple fixture is a hard failure. Score convergence and interaction in these scenarios too: finding a broken link does not justify an indefinite interview or a checklist of every possible relationship.
+
+For invariant changes, run scenarios 11, 14, and 15 with their invariant-focus notes, plus 16–18. Together they cover invalid metadata references, configuration drift, excessive validation machinery, broken API contracts, recurring violations, and changeable business policy. Treating the campaign percentage in scenario 18 as a permanent architectural requirement is a hard failure. Do not award full invariant scores merely for using the word: require an explicit scope, justified condition, and proportionate check or response where relevant. Preserve one-question-at-a-time interaction and convergence; manual validation may be sufficient when justified.
