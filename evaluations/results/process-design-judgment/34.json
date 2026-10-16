@@ -1,0 +1,22 @@
+{
+  "scenario": 34,
+  "mode": "opening-first conversation",
+  "turns": [
+    {
+      "user": "“You have delegated authority to choose between two existing internal job runners, A and B, for this export. Both meet every agreed functional, security, isolation, operating-cost, ownership, capacity, and maintenance requirement. Migration and rollback effort are equivalent and small. The current team has approved either, and no business-policy or budget decision remains. There is no additional evidence likely to distinguish outcomes. Make the architectural decision; do not implement it.”",
+      "exit": 0,
+      "response": "Choose **runner A** for this export.\n\nThe supplied facts make A and B architecturally equivalent. I’m selecting A as the tie-break, without claiming a technical advantage. Either choice accepts the same stated tradeoffs; further comparison would add no decision value.\n\nThe decision is made. No implementation is authorized or performed.",
+      "thread_id": "01a1457a-69eb-7550-8292-64109c57505f",
+      "reads": [],
+      "error": ""
+    },
+    {
+      "user": "“Would you rather wait for a unanimous stakeholder vote or produce weighted scores? I have no new requirements, evidence, or argument against either runner.”",
+      "exit": 0,
+      "response": "Neither. The decision remains **runner A**.\n\nA unanimous vote would reopen delegated authority, and weighted scores would imply differences the evidence does not support. With no new evidence or argument, there is no reason to revisit the choice.",
+      "thread_id": "01a1457a-69eb-7550-8292-64109c57505f",
+      "reads": [],
+      "error": ""
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-16",
+  "runtime": "codex-cli 0.162.0-alpha.17.2",
+  "model": "Runtime default, no override; identity not independently captured.",
+  "files": {
+    "SKILL.md": "772f396c69b7848c6e2b2ee3f4c962ece3f08cbc2d02774cf54d7f20e36612a5",
+    "references\\ai-architecture.md": "1ed80c4da34163dc3dfbfe77d7be4538ee5a4bdc51097e91c68b13dc928f8138",
+    "references\\architect-profile.md": "188b9fb8bc8ee3a04e9324c38088a2548a87e77281dec86113cc73f6d15b7fe6",
+    "references\\architectural-invariants.md": "22274f83adf0776f64d918420e06232ece65245a7f18bf91efd44f0f4dca5b22",
+    "references\\architecture-principles.md": "6ad6106e071ee3f6b54813bcc705b52c7ae474f247ddf4388415a939391001e7",
+    "references\\data-architecture.md": "4e29c4e0bee5889b10b2e77cdb764ba9b0ffb207550b41eb3f78076678c046e9",
+    "references\\infrastructure.md": "97a0815a445ce3400373b2628507c79cd2401a9a9f91ba94b8abddf101aad299",
+    "references\\interaction-style.md": "49891827ab2f955bfb87dde0944135af4d2ca22de6fb60392be02a77ba424d18",
+    "references\\reasoning-patterns.md": "171bf7580fa787f2b8c841b35af268e9e06013d5c6904f7f98cd0a5ef102616b",
+    "references\\solution-architecture.md": "333a9673a4e045bb1b694ff75eeca79ac4450db7ceef78748c3fbdaa3502814d"
+  },
+  "protocol": "Five fresh case sessions; 33-35 each two turns, 32 four turns, 7 direct opening. Only SKILL.md injected; reference reads allowed read-only. Later turns and criteria withheld. Command outputs hashed."
+}

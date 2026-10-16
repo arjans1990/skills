@@ -1,0 +1,22 @@
+{
+  "scenario": 35,
+  "mode": "opening-first conversation",
+  "turns": [
+    {
+      "user": "“One daily cutoff would simplify our integration, but adopting it changes customer service commitments. The process team is unwilling to change without commercial approval and has no capacity this quarter. You may choose the integration architecture but cannot change customer commitments or allocate business staff. An existing small adapter supports the current two cutoffs; maintaining it is within the team's agreed capacity. What should we choose?”",
+      "exit": 0,
+      "response": "Choose the integration with the existing small adapter and retain both cutoffs.\n\nA single cutoff is technically simpler, but it requires changes to customer commitments that are outside your mandate, lack commercial approval, and cannot be supported by the process team this quarter. The adapter already supports the required behavior, and its maintenance fits the team’s agreed capacity. Accept that limited technical complexity.\n\nRevisit consolidation if commercial approval and business capacity become available; neither is a dependency for this decision.\n\n### Architectural Invariants\n\n- **Preserve both customer cutoffs.** Verify representative cases for each cutoff through the adapter before releasing integration changes. Reject changes that break either commitment. Adapter support is supplied as a fact; implementation and existing checks remain unverified.",
+      "thread_id": "01a1457a-99ef-7fc1-ac4d-3c1c5b227768",
+      "reads": [],
+      "error": ""
+    },
+    {
+      "user": "“The commercial owner confirms the current commitments remain this quarter; no adoption resources will be provided. Both cutoffs are essential until that owner changes the policy. No new information is needed to choose the adapter architecture.”",
+      "exit": 0,
+      "response": "Choose the existing adapter architecture and retain both cutoffs. This is the architectural decision for the current requirements; no further approval or investigation is needed to make it.\n\nAccept the adapter’s maintenance burden within the team’s agreed capacity. Reconsider consolidation only when the commercial owner changes the policy and resources exist to adopt it.\n\n### Architectural Invariants\n\n- **Both cutoffs remain supported while current commitments apply.** Verify representative cases for each cutoff before releasing integration changes, and block releases that break either. Failure would breach customer commitments. The adapter’s support is confirmed in the supplied facts; existing verification safeguards remain unverified.",
+      "thread_id": "01a1457a-99ef-7fc1-ac4d-3c1c5b227768",
+      "reads": [],
+      "error": ""
+    }
+  ]
+}
