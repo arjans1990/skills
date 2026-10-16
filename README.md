@@ -1,4 +1,6 @@
-# Arjan the Architect
+# ABC — Arjan's Blueprint Companion
+
+*Think critically. Challenge assumptions. Design simply.*
 
 A portable Agent Skill for constructive architecture sparring: challenge the problem framing, find shared mechanisms and control points, and converge on a simple solution its owners can maintain.
 
@@ -9,7 +11,7 @@ Inspired by Arjan's architectural reasoning principles. This is not a simulation
 Requires an Agent Skills-compatible client. The CLI route also requires Node.js/npm and access to the source repository. From the project where you want to use it:
 
 ```sh
-npx skills@latest add arjans1990/skills --skill arjan-the-architect --agent github-copilot
+npx skills@latest add arjans1990/skills --skill abc-arjans-blueprint-companion --agent github-copilot
 ```
 
 Add `--global` for personal installation across projects. Use `--copy` if symlinks are unsuitable, including on Windows. To inspect discovery without installing:
@@ -21,28 +23,28 @@ npx skills@latest add arjans1990/skills --list
 These GitHub commands require this version to have been pushed to that remote; creating these files locally does not publish them. To try the current checkout, replace `arjans1990/skills` with its absolute local path, or run this from the checkout:
 
 ```sh
-npx skills@latest add . --skill arjan-the-architect --agent github-copilot
+npx skills@latest add . --skill abc-arjans-blueprint-companion --agent github-copilot
 ```
 
-For other agents, omit `--agent github-copilot` and select your installed client interactively. The distributable is the entire [skills/arjan-the-architect](skills/arjan-the-architect) directory. No scripts, vendor extensions, or custom agent persona are required at runtime.
+For other agents, omit `--agent github-copilot` and select your installed client interactively. The distributable is the entire [skills/abc-arjans-blueprint-companion](skills/abc-arjans-blueprint-companion) directory. No scripts, vendor extensions, or custom agent persona are required at runtime.
 
 ### VS Code / GitHub Copilot
 
-The CLI currently targets `.agents/skills/` for a project and `~/.copilot/skills/` for personal Copilot skills. Alternatively, copy the complete skill directory to `.github/skills/arjan-the-architect/` in the target project; preserve its references. Avoid installing duplicate copies through multiple paths.
+The CLI currently targets `.agents/skills/` for a project and `~/.copilot/skills/` for personal Copilot skills. Alternatively, copy the complete skill directory to `.github/skills/abc-arjans-blueprint-companion/` in the target project; preserve its references. Avoid installing duplicate copies through multiple paths.
 
-Open Copilot Chat and invoke `/arjan-the-architect`, or ask for an architecture review. Use `/skills` to inspect available skills if discovery fails. Relevant requests can also activate it automatically; discovery does not guarantee activation for every prompt. No explicit-only policy is set.
+Open Copilot Chat and invoke `/abc-arjans-blueprint-companion`, or ask for an architecture review. Use `/skills` to inspect available skills if discovery fails. Relevant requests can also activate it automatically; discovery does not guarantee activation for every prompt. No explicit-only policy is set.
 
 Other compatible clients have their own discovery paths and invocation syntax. Copy the full directory into their documented skill location and invoke it by name; the standard format alone does not prove end-to-end client compatibility.
 
 ## Use
 
 ```text
-/arjan-the-architect We propose a separate pipeline for each domain.
+/abc-arjans-blueprint-companion We propose a separate pipeline for each domain.
 Help us test whether the differences justify that design.
 ```
 
 ```text
-Review this proposal using Arjan the Architect. We want a new AI agent
+Review this proposal using ABC — Arjan's Blueprint Companion. We want a new AI agent
 to route requests. The existing routing rules and constraints are attached.
 ```
 
@@ -55,17 +57,19 @@ Examples are explicitly generalized or synthetic. They do not establish historic
 For CLI-managed installations:
 
 ```sh
-npx skills@latest update arjan-the-architect
+npx skills@latest update abc-arjans-blueprint-companion
 ```
 
 Select the intended installation scope when prompted. Review upstream changes before adopting them, especially if you customized a copy. For manual installations, replace the whole directory from a reviewed revision, retaining local customization separately.
+
+For installations made under the previous skill name, reinstall using the ABC identifier above and remove the previous entry through your client's skill management. Updating an old identifier does not perform the rename.
 
 ## Validation and evaluation
 
 Run format validation using the Agent Skills reference implementation (requires `uv` and network access on first run):
 
 ```sh
-uvx --from skills-ref agentskills validate skills/arjan-the-architect
+uvx --from skills-ref agentskills validate skills/abc-arjans-blueprint-companion
 ```
 
 The specification currently shows the executable as `skills-ref`; the package resolved during validation exposes `agentskills` instead. Run the prompts and score conversations with [the evaluation guide](evaluations/README.md) and [scenarios](evaluations/scenarios.md). Format validation does not establish behavioral quality. The evaluation guide summarizes recorded results and known limitations.

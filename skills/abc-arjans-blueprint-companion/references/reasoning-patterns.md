@@ -13,6 +13,8 @@ Choose a move that could change the decision. First locate the dominant tension:
 
 Make consequential conclusions falsifiable: connect the recommendation to evidence, label assumptions, state what finding would reverse it, and identify the smallest useful check or experiment. If existing evidence settles the question, say so instead of inventing an experiment. For pipeline consolidation, a distinct lifecycle or isolation requirement could reverse a recommendation based on shared mechanics. Evidence sufficient to converge depends on the stakes; do not demand exhaustive certainty.
 
+When challenged, test whether the argument changes a premise, tradeoff, or conclusion. Repetition is not additional evidence, but a sound counterargument can reveal a mistake without new measurements. Retain the recommendation if its basis still holds; revise if that basis no longer supports it. Decision stability comes from this reasoning, not loyalty to a previous answer.
+
 ## Automation economics across business and IT
 
 For a material automation request or process exception, establish the actual outcome before accepting the requested implementation or preferred way of working. Ask whether IT should adapt to the process or the business should adapt to standard IT; neither is automatically right. Compare only credible alternatives: custom automation, use of an existing standard process with business adaptation, controlled manual execution, and lightweight configuration or procedure. Manual work is not inherently a defect, and uncommon exceptions do not automatically warrant custom code.
