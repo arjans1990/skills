@@ -1,85 +1,53 @@
-# ABC — Arjan's Blueprint Companion
+﻿# ABC — Arjan's Blueprint Companion
 
 *Think critically. Challenge assumptions. Design simply.*
 
-A portable Agent Skill for constructive architecture sparring: challenge the problem framing, find shared mechanisms and control points, and converge on a simple solution its owners can maintain.
+I created ABC to bring my approach to architectural reasoning into your AI coding agent. Use it as a sparring partner to sharpen a proposal, challenge assumptions, and work toward a simple design its owners can understand and maintain.
 
-Inspired by Arjan's architectural reasoning principles. This is not a simulation of Arjan or a claim of his endorsement. It works across organizations and stacks without private conversations, internal materials, or another skill.
+It supports data, infrastructure, AI, integration, and solution architecture decisions across organizations and technology stacks.
+
+## What it helps with
+
+- Clarify the problem and the outcome before choosing a solution.
+- Find shared mechanisms and distinguish differences that justify separate designs.
+- Make responsibilities, correctness conditions, and operational tradeoffs explicit.
+- Explore simpler alternatives using existing capabilities.
+- Converge on a defensible recommendation, including its remaining tradeoffs.
+
+ABC asks one substantive question at a time, responds in your language, and answers narrow implementation questions directly. It accepts justified complexity and stops when the decision is sufficiently clear.
 
 ## Install
 
-Requires an Agent Skills-compatible client. The CLI route also requires Node.js/npm and access to the source repository. From the project where you want to use it:
+Run this command with Node.js/npm available:
 
 ```sh
-npx skills@latest add arjans1990/skills --skill abc-arjans-blueprint-companion --agent github-copilot
+npx skills@latest add arjans1990/skills --skill abc-arjans-blueprint-companion
 ```
 
-Add `--global` for personal installation across projects. Use `--copy` if symlinks are unsuitable, including on Windows. To inspect discovery without installing:
+Select your agent during installation and follow the prompts. See the [skills CLI documentation](https://github.com/vercel-labs/skills) for supported agents and installation options.
 
-```sh
-npx skills@latest add arjans1990/skills --list
-```
+## Get started
 
-These GitHub commands require this version to have been pushed to that remote; creating these files locally does not publish them. To try the current checkout, replace `arjans1990/skills` with its absolute local path, or run this from the checkout:
-
-```sh
-npx skills@latest add . --skill abc-arjans-blueprint-companion --agent github-copilot
-```
-
-For other agents, omit `--agent github-copilot` and select your installed client interactively. The distributable is the entire [skills/abc-arjans-blueprint-companion](skills/abc-arjans-blueprint-companion) directory. No scripts, vendor extensions, or custom agent persona are required at runtime.
-
-### VS Code / GitHub Copilot
-
-The CLI currently targets `.agents/skills/` for a project and `~/.copilot/skills/` for personal Copilot skills. Alternatively, copy the complete skill directory to `.github/skills/abc-arjans-blueprint-companion/` in the target project; preserve its references. Avoid installing duplicate copies through multiple paths.
-
-Open Copilot Chat and invoke `/abc-arjans-blueprint-companion`, or ask for an architecture review. Use `/skills` to inspect available skills if discovery fails. Relevant requests can also activate it automatically; discovery does not guarantee activation for every prompt. No explicit-only policy is set.
-
-Other compatible clients have their own discovery paths and invocation syntax. Copy the full directory into their documented skill location and invoke it by name; the standard format alone does not prove end-to-end client compatibility.
-
-## Use
+Ask your agent to use ABC and share the problem, your proposal, and the relevant constraints:
 
 ```text
-/abc-arjans-blueprint-companion We propose a separate pipeline for each domain.
-Help us test whether the differences justify that design.
+Use abc-arjans-blueprint-companion to review this proposal:
+we want a separate pipeline for each domain. Help us determine
+which differences justify separation and what we could share.
 ```
 
-```text
-Review this proposal using ABC — Arjan's Blueprint Companion. We want a new AI agent
-to route requests. The existing routing rules and constraints are attached.
-```
+You can bring an architecture proposal, a recurring incident, or a decision between competing approaches. Provide relevant project context and evidence so the discussion can focus on the choices that matter. A short recommendation is usually enough; ask for an architecture decision record when you need one.
 
-Supply the problem, proposal, and available constraints. The skill reads relevant accessible project context, then asks one substantive question at a time. It distinguishes evidence from assumptions, accepts justified complexity, and stops when the decision is sound. It responds in your language and answers narrow implementation questions directly. An ADR is optional.
+## About
 
-Examples are explicitly generalized or synthetic. They do not establish historical outcomes or organizational standards. Do not add confidential project material to the published skill; provide appropriate redacted runtime context instead.
+ABC is a portable [Agent Skill](https://agentskills.io) inspired by my architectural reasoning: understand the problem, challenge unnecessary complexity, and make deliberate tradeoffs. These principles guide judgment and leave room for context and exceptions.
 
-## Updates
+The complete skill lives in [skills/abc-arjans-blueprint-companion](skills/abc-arjans-blueprint-companion). It requires no additional skill or custom agent persona.
 
-For CLI-managed installations:
+## Make it your own
 
-```sh
-npx skills@latest update abc-arjans-blueprint-companion
-```
+This skill reflects my personal views on architecture, shaped by years of experience. You are welcome to fork it and adapt it to your own perspective and way of working.
 
-Select the intended installation scope when prompted. Review upstream changes before adopting them, especially if you customized a copy. For manual installations, replace the whole directory from a reviewed revision, retaining local customization separately.
+## License
 
-For installations made under the previous skill name, reinstall using the ABC identifier above and remove the previous entry through your client's skill management. Updating an old identifier does not perform the rename.
-
-## Validation and evaluation
-
-Run format validation using the Agent Skills reference implementation (requires `uv` and network access on first run):
-
-```sh
-uvx --from skills-ref agentskills validate skills/abc-arjans-blueprint-companion
-```
-
-The specification currently shows the executable as `skills-ref`; the package resolved during validation exposes `agentskills` instead. Run the prompts and score conversations with [the evaluation guide](evaluations/README.md) and [scenarios](evaluations/scenarios.md). Format validation does not establish behavioral quality. The evaluation guide summarizes recorded results and known limitations.
-
-## Sources and open decisions
-
-The format, commands, discovery paths, and invocation guidance were checked on 2026-10-16 against the [Agent Skills specification](https://agentskills.io/specification), [skills CLI documentation](https://github.com/vercel-labs/skills), and [VS Code documentation](https://code.visualstudio.com/docs/agent-customization/agent-skills). CLI versions and client behavior can change. The CLI discovers `skills/<name>/SKILL.md`; VS Code requires installation into a supported discovery path.
-
-MVP defaults are constructive challenge, automatic discovery, bounded inspection, and optional decision records. Automatic discovery is a reversible product choice; a separate custom agent persona remains optional future work, not a dependency. Contributions should follow [AGENTS.md](AGENTS.md).
-
-Historical transcripts and measured case outcomes are unavailable; examples are generalized or synthetic, and principles are not independently verified personal quotations. Additional real case details require supporting evidence and authorization to publish. No external skill content has been copied; source and license review is required before any future reuse. Client compatibility and evaluation thresholds still need validation as described in the evaluation guide.
-
-Licensed under the existing [MIT license](LICENSE). No upstream grilling skill text or files have been copied.
+[MIT](LICENSE).
